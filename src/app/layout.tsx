@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Barlow } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const balow = Barlow({
+  weight: ["100", "200", "300", "400", "500"],
+  subsets: ["latin"],
+  variable: "--font-barlow-sans",
 });
 
 const geistMono = Geist_Mono({
@@ -24,11 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${balow.className} antialiased`}>{children}</body>
     </html>
   );
 }
