@@ -1,11 +1,13 @@
 import { IButton } from "@/types/component.types";
 import React from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
 
-const Button = ({ text, onClick }: IButton) => {
+const Button = ({ text, onClick, cursor }: IButton) => {
+  const cursorType = cursor ? `cursor-${cursor}` : "cursor-pointer";
   return (
     <div>
-      <button className="bg-btn px-10 py-4 rounded-full font-medium text-md text-foreground">
+      <button
+        className={`bg-btn px-10 py-4 rounded-full font-medium text-md text-foreground ${cursorType}`}
+      >
         {text}
       </button>
     </div>

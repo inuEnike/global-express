@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../shared/Button";
+import Button from "../../shared/Button";
 
 const Hero = () => {
   return (
@@ -11,14 +11,14 @@ const Hero = () => {
             Where Safety Meets Speed
           </h1>{" "}
           <p className="py-5 leading-10">
-            Logistics isn’t just about moving products — it’s about building
+            Logistics isn’t just about moving products - it’s about building
             trust. At Global Express Delivery UK, we combine affordability,
             speed, and reliability to create shipping solutions that work for
-            you. With more than 25 years of experience, we’ve become the
+            you. With more than 25+ years of experience, we’ve become the
             smarter, faster alternative to UPS Ground, helping businesses expand
             to more locations without breaking the bank.
           </p>
-          <Button text={"Get Started"} />
+          <Button text={"Get Started"} cursor="pointer" />
         </div>
         <div className="flex items-center gap-10 p-7 bg-foreground md:w-[40%] w-[90%] my-5 rounded-md">
           <form className="flex flex-col text-background w-full">
@@ -27,10 +27,11 @@ const Hero = () => {
             </label>
             <input
               type="text"
-              className="shadow w-full p-3 my-5 rounded-sm"
+              className="shadow w-full p-3 my-5 rounded-sm focus:outline-none"
               placeholder="Input your Tracking Id"
+              required
             />
-            <Button text="Track your goods" />
+            <Button text="Track your goods" cursor="pointer" />
           </form>
         </div>
       </div>

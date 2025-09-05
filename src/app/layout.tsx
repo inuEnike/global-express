@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Barlow } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/shared/ScrollToTop";
+import { AppContextProvider } from "@/context/AppContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const balow = Barlow({
   weight: ["100", "200", "300", "400", "500"],
   subsets: ["latin"],
   variable: "--font-barlow-sans",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${balow.className} antialiased`}>{children}</body>
+      <AppContextProvider>
+        <body className={`${balow.className} antialiased`}>
+          <ScrollToTop />
+
+          {children}
+        </body>
+      </AppContextProvider>
     </html>
   );
 }
